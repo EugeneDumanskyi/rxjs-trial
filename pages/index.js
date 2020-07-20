@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import AirData from '../components/AirData';
-import liveData$ from '../services/liveData';
+import {liveData$} from '../services/liveData';
 
 
 export default class Home extends React.Component {

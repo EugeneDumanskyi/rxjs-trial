@@ -9,8 +9,8 @@ const naData = {
 };
 const eventName = 'live-data'
 const maxTimeout = 1000
-const socket$ = of(io(':3001'))
-const liveData$ = socket$
+const socket = io(':3001')
+const liveData$ = of(socket)
     .pipe(
         switchMap(socket =>
             fromEvent(socket, eventName)
@@ -21,4 +21,4 @@ const liveData$ = socket$
                 )
         )
     )
-export default liveData$
+export {socket, liveData$}
